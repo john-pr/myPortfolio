@@ -18,7 +18,7 @@ function showError(err) {
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./dist/."
         }
     });
 });
@@ -34,7 +34,7 @@ gulp.task('sass', function () {
             browsers: ['last 2 versions'],
         }))
         .pipe(sourcemaps.write('.'))  //kropka jako string, nie bedzie komentarza w scss
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./dist/css'))
         .pipe(browserSync.stream())
 });
 
